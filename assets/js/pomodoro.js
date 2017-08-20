@@ -6,9 +6,9 @@ $(function() {
 	var month = now.getMonth() + 1;
 	var year = now.getFullYear();
 
-	var nowHour = now.getHours();
-	var nowMinute = now.getMinutes();
-	var nowSecond = now.getSeconds();
+	var nowHour;
+	var nowMinute;
+	var nowSecond;
 
 	var second;
 	var timer;
@@ -31,9 +31,19 @@ $(function() {
 	$("#year").html(year);
 
 	//Affiche l'heure
-	$("#nowHour").html(double(nowHour));
-	$("#nowMinute").html(double(nowMinute));
-	$("#nowSecond").html(double(nowSecond));
+     function getdate(){
+        var now = new Date();
+        var nowHour = now.getHours();
+        var nowMinute = now.getMinutes();
+        var nowSecond = now.getSeconds();
+
+        $("#nowHour").html(double(nowHour));
+		$("#nowMinute").html(double(nowMinute));
+		$("#nowSecond").html(double(nowSecond));
+        setTimeout(function(){getdate()}, 1000);
+        }
+
+       getdate();
 
 	// Convertit les secondes en minutes/secondes
 	function secondsTimeSpanToMS(s) {
