@@ -1,0 +1,109 @@
+/*-------------------- FONTS---------------------------------*/
+@font-face {
+	font-family: 'Lato';
+	src: url("../fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+	font-family: 'Lato-Italic';
+	src: url("../fonts/Lato/Lato-Italic.ttf");
+}
+
+@font-face {
+	font-family: 'Lato-Bold';
+	src: url("../fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url("../fonts/fonts/FontAwesome.otf");
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url("../fonts/FontAwesome/FontAwesome.otf");
+}
+
+@font-face {
+	font-family: 'Pacifico';
+	src: url("../fonts/Pacifico/Pacifico-Regular.ttf");
+}
+
+/*-------------------- MAIN---------------------------------*/
+
+body {
+	background-color: #60c6c4;
+}
+
+.container {
+	border: 2px dashed #fff;
+}
+
+h1 {
+	font-family: 'Lato', sans-serif;
+	color: #ebe4dc;
+	text-align: center;
+	width: 300px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+p {
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	color: #fff;
+	width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+p span {
+	font-weight: bold;
+}
+
+.timerDisplay{
+	height: 290px;
+	width: 290px;
+	background-image: url("../img/apple.png");
+	background-size: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#timer {
+	font-size: 52px;
+	font-family: 'Pacifico', cursive;
+	text-align: center;
+	line-height: 300px;
+	color: #60c6c4;
+}
+
+button {
+	max-width: 100px;
+	background-color: #ebe4dc;
+	color: #15d3c5;
+	border: 2px solid #60c6c4;
+}
+
+button:hover {
+	background-color: #fff;
+	transition-delay: 0.1s;
+	transition-duration: 0.6s;
+}
+
+.option {
+	margin-top: 5px;
+	width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: 'Lato-Bold', sans-serif;
+}
+
+.action {
+	margin-top: 5px;
+	width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+}

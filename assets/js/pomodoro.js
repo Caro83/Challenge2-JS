@@ -1,15 +1,48 @@
 $(function() {
+	//Définition des variables
+	var now = new Date();
+
+	var day = now.getDate();
+	var month = now.getMonth() + 1;
+	var year = now.getFullYear();
+
+	var nowHour = now.getHours();
+	var nowMinute = now.getMinutes();
+	var nowSecond = now.getSeconds();
+
 	var second;
 	var timer;
 	var once = true;
-	
+
+	// Affiche un nombre à 2 chiffres
+	function double(nb) {
+		if(nb < 10) {
+			nb = "0"+nb;
+			return nb;
+		}
+		else {
+			return nb;
+		}
+	}
+
+	//Affiche la date
+	$("#day").html(double(day));
+	$("#month").html(double(month));
+	$("#year").html(year);
+
+	//Affiche l'heure
+	$("#nowHour").html(double(nowHour));
+	$("#nowMinute").html(double(nowMinute));
+	$("#nowSecond").html(double(nowSecond));
+
+	// Convertit les secondes en minutes/secondes
 	function secondsTimeSpanToMS(s) {
 	    var m = Math.floor(s/60); 
 	    s -= m*60;
 	    return (m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); 
 	}
 	
-
+	// Session de travail de 25 minutes
 	$("#work").click(function() {
 		second = 1500;
 		if(once) {
@@ -26,6 +59,7 @@ $(function() {
 		}	
 	});
 
+	// Pause de 5 minutes
 	$("#break-5").click(function() {
 		second = 300;
 
@@ -44,6 +78,7 @@ $(function() {
 
 	});
 
+	// Pause de 15 minutes
 	$("#break-15").click(function() {
 		second = 900;
 
@@ -62,6 +97,7 @@ $(function() {
 
 	});
 
+	// Relance le timer s'il est en pause
 	$("#start").click(function() {
 		second = second;
 		if(once) {
@@ -77,6 +113,7 @@ $(function() {
 		}	
 	});
 
+	// Met en pause le timer
 	$("#stop").click(function() {
 		clearInterval(timer);
 		$("#timer").html(secondsTimeSpanToMS(second));
@@ -85,6 +122,7 @@ $(function() {
 
 	});	
 
+	// Réinitialise le timer
 	$("#reset").click(function() {
 		second = 0;
 
@@ -96,6 +134,5 @@ $(function() {
 
 		once = true;
 	});
-
 
 });
