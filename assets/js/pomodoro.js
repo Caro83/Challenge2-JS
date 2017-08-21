@@ -14,6 +14,8 @@ $(function() {
 	var timer;
 	var once = true;
 
+	var soundForest = $("#soundForest");
+
 	// Affiche un nombre à 2 chiffres
 	function double(nb) {
 		if(nb < 10) {
@@ -61,6 +63,7 @@ $(function() {
 			$("#timer").html(secondsTimeSpanToMS(second));
 			if (second === 0) {
 				clearInterval(timer);
+				soundForest[0].play();
 				alert("Travail terminé ! C'est l'heure de la pause");
 			}
 			}, 1000);
@@ -79,6 +82,7 @@ $(function() {
 			$("#timer").html(secondsTimeSpanToMS(second));
 			if (second === 0) {
 				clearInterval(timer);
+				soundForest[0].play();
 				alert("Pause terminée ! Hop, au travail !");
 			}
 			}, 1000);
@@ -98,6 +102,7 @@ $(function() {
 			$("#timer").html(secondsTimeSpanToMS(second));
 			if (second === 0) {
 				clearInterval(timer);
+				soundForest[0].play();
 				alert("Pause terminée ! Hop, au travail !");
 			}
 			}, 1000);
@@ -116,6 +121,7 @@ $(function() {
 			$("#timer").html(secondsTimeSpanToMS(second));
 			if (second === 0) {
 				clearInterval(timer);
+				soundForest[0].play();
 			}
 			}, 1000);
 
